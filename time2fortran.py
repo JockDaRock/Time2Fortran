@@ -33,7 +33,7 @@ if __name__ == "__main__":
             print(st, file=f)
             f.close()
             p0 = subprocess.Popen(["gfortran", tmpfile, "-o", "main"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            p4, p5 = p0.stdout.read().decode('utf-8'), p1.stderr.read().decode('utf-8')
+            p4, p5 = p0.stdout.read().decode('utf-8'), p0.stderr.read().decode('utf-8')
             if len(p4) > 0:
                 print(p4)
             elif len(p5) > 0:
