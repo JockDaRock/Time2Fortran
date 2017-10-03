@@ -32,7 +32,7 @@ if __name__ == "__main__":
             f = open(tmpfile, 'w')
             print(st, file=f)
             f.close()
-            p1 = subprocess.Popen(["gfortran", tmpfile, "-o", "main", "&&", "./main"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            p1 = subprocess.Popen(["gfortran", tmpfile, "-o", "main", "&&", "/root/main"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             p2, p3 = p1.stdout.read().decode('utf-8'), p1.stderr.read().decode('utf-8')
             if len(p2) > 0:
                 print(p2)
